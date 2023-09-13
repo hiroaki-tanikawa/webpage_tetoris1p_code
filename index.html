@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>プログラミングぶろぐ</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/sanitize.css">   
+        <link rel="stylesheet" href="./assets/style.css">
+    </head>
+    
+    <section class="title_section">
+        <p class="title-headline">プログラミングぶろぐ</p>
+        <figure class="title-about">
+            <img class="title-image" src="https://msp.c.yimg.jp/images/v2/FUTi93tXq405grZVGgDqG0kLB99eYk8FuKHRYcW3SCMP-exZ-24UX98A_XultMjYYLYldR8Re4gSWmXaRFu955LY4-061iyB0fvdeMOcICuhOdWKRjdPbU6_8Yp_Ewe22oHeBnUffYtUibyEcSgjy4BbGYAgIXZdxNrvGULeZqoRPa7l8druUefvO4PxtG6tnbiQB0uLVZwfSvxVm8Hkx0dR8Qg4yvOj9NbXQChwAtfmBndcv1DrNtb3gH7NDmu4BJKj3BU_FQJeivYFvGSJMU-e_FCwGLmEJv55D7k6hGQApS5qnVcr-ViLuWtCVjR1WDvzvHQHcnvJqouIlMJOZnNvBe95GDEH2wNeD_Xw-Uya8lJ3J6yYelsX36P9dys-Kn2oPwT5zuZ7UiOTkp9Qo1Rslxcp8ZmcLQLXOLmVx-yq-in8r1Lg0_VTcv3chICMGUF6KPmDIbuvjuJjcbUnY6CJEDmKpewJuKhYS2XblRy3f2l5m0GmV0EqvgF-QuBvGwhJmNG6eRSeXWUX7QqFLcvkGz7TAPjyk-__U4It-5R_ayeqFC_9PoUP51KaDCjiLIPgoWNcn8i7evlLfSy9xbdeozH9bx7Z5y2daet_r9jlM1_IHAdt-WDT-8SxovAFHfZwOCG8WuYIBijIt8w5XX1bkFrM5QeAvMigIVI7_0ChuO0EGuasr_q7WZeYjow-VYY1Gk-fSPxmez5_5cE0WPMT4bzjmvGKJENIfRZBbCYTD9JUY7so7DJ3rmy2R1UJRwtUadECD-pA8RTzfAHEpE29FF7-T8lyJmMIiDnLAva4TsGyETjR7HwOOLXspXIDaQYX7XADwiJcGDlGOLZD4wOz0c6rE2DqRDj-s2dawEQNPaiLgdKUOZt_WDDUkGxZHEpr4iEMEjcS0S2keypGqJIcCsLrYMtM-_t8rFtWd6vM-vOvzoKqVvQdPSPmy-FCcELQyJ_TnXygPDZy1a2CFnuQ7J3_LayuCrzGXA_AJ72QExzGCrwVxlY4YTMLqgdAZLT_k1dL-6TTQ-JjEHDdF4nz0XsIhxw7tKR695UhXP-oCPXnMIaFtug8nEsQCc3Z1lOnXofuIx8PPUef4VCODhkqR0GPO1A6e6B5K6kg7usidBPiAJeUrYpMz3DRHwZaZshKYWV871YTKAuzzwlRgZryUncnrJh6Wxffo_13Kz4qfag_BPnO5ntSI5OSn1CjcHZKdmtOeQQMESg4mKtF4TTJRt3PHVUMZ9qwE0BsTzOs0wiS-BA54RKW1-wK7qIpBiffLEwVgNv_owskpeEdCpsVyp8XeiWw4zz5B2Y1xQNaKeDZuVu91fOvS9q7ixMV/E7AB8BE4BD933DE382BFE382A4E383ABE382B5E383A0E3838DE382A4E383ABE38390E38383E382AFE382B0E383A9E382A6E383B3E38389E8838CE699AFE382B0E383A9E38387E383BCE382B7E383A7E383B3E99D92-800x450.png?errorImage=false" alt="">
+        </figure>    
+    </section>
+
+
+    <section class="naiyo">   
+            <h1 class="naiyo-headline">テトリス(1人プレイ仕様,Python)</h1>
+
+            <div class="section">
+                <h3 class="section-tytle">テトリスとは</h3>
+                <div class="section-desctiption">
+                 テトリスとは、ざっくり言うと、<br>  
+                 ・ブロックが上部にセットされる<br>
+                 ・ブロックは勝手に下に落ちる<br>
+                 ・ブロックの下面が地面に接したらブロックは"地面化"される<br>     
+                 ・ブロックは地面かされるまでの間、プレイヤーにより左右下移動、回転できる。<br>
+                 ・地面化ブロックは水平に1ラインそろえばそのラインは消える<br>
+                 ・地面化ブロックが上部まで達したらゲームオーバー<br>
+                 のゲームです。<br>
+                </div>               
+            </div> 
+
+            <div class="section">
+                <h3 class="section-tytle">プログラムで主にやること</h3>
+                <div class="section-desctiption">
+                    <section>
+                        とりあえず、下記３つの仕組みが出来たら大体テトリスは完成と言えるので、それぞれ作っていきます。
+                        <p class="small-tytle">その１</p>
+                        ・ブロックが下に落ち、地面に接したら地面化<br>
+                        ・地面化したら、次のブロックが呼び出される
+                            <button id="botan_open_1">▽</button><button id="botan_close_1">△</button> 
+                            <section id="hyoji_1">
+                                まず2つの行列を用意します。<br>
+                                ・地面や壁や地面化したブロックが描かれる行列(BackDisplayの名)<br>
+                                ・今操作しているブロックが描かれる行列(BlockLocaの名)<br>
+                                この2つの行列は、<br>
+                                ブロックあり→1<br>
+                                ブロックなし→0<br>
+                                で表現します。<br>
+                                下記のコードはBlockLocaの初期状態の行列です。<br>
+                                numpy.zeros((縦要素数,横要素数))を作成し、下記のように指定の箇所のみ 1 に書き換えます。<br> 
+                                <script src="https://gist.github.com/hiroaki-tanikawa/0f1be61830749586c1a78dc735fdee9a.js"></script>
+                                のちにこの行列をゲーム画面とリンクさせて見えやすいようにします。<br>
+                                <br>
+                                ブロックを下に落とす操作に入ります。<br>
+                                今の位置にあるブロックを下に何マスずらせば地面に接するかを計算します。<br>
+                                ⇒つまり、BlockDisplayの要素1たちを何マス下にずらせばBackDisplayの要素1たちと重なるかを計算します。<br>
+                                pro=ブロックを下にずらすマス数。<br>
+                                proを増やしていき、地面と重なった時にブロックのy位置を(現状+pro-1)にて地面化します。<br>
+                                (背景BackDispに、地面化したブロックの箇所を1に書き換えます)
+                                <script src="https://gist.github.com/hiroaki-tanikawa/95f1cbdda988a696155ac5f854e6e53b.js"></script>
+                            </section>
+
+
+                        <p class="small-tytle">その2</p>
+                        ・地面や壁や地面化したブロックは通り抜けれないようにする
+                            <button id="botan_open_2">▽</button><button id="botan_close_2">△</button>
+                            <section id="hyoji_2">
+                                壁やブロックを通り抜けられない=突き抜ける方向のキーを押しても反応させない、と考えます。<br>
+                                <script src="https://gist.github.com/hiroaki-tanikawa/819f514a3055f9058c558babbc7b09e2.js"></script>
+                                pro=左右に動かすマス数<br>
+                                右キーや左キーでブロックを動かして(proを増やしていき)、BackDisplayの要素1たちと重なってしまった場合、<br>
+                                やっぱりなかったことにする、のようにプログラミングします。<br>
+                                回転についても同様に、BackDisplayの要素1たちと重ならないかを確認します。
+                            </section>
+                        
+                        
+                        <p class="small-tytle">その3</p>
+                        ・水平に１ラインそろえばそのラインを消す
+                            <button id="botan_open_3">▽</button><button id="botan_close_3">△</button>
+                            <section id="hyoji_3">
+                                BackDisplayを上から下まで読んでいき、一ライン揃っていれば消す、を実行します。<br>
+                                一ライン消す=ラインよりうえの要素を1行下にスライドする、と考えます。<br>
+                                <script src="https://gist.github.com/hiroaki-tanikawa/88ba5de8db47c4555510b4cba262b9df.js"></script>
+                                読む方向は上からでも下からでも結果は同じになると思います。<br>                      
+                            </section>                        
+                    </section>
+               </div>
+            </div> 
+
+               
+            <div class="section">
+                <h3 class="section-tytle">プログラム全体</h3>
+                <div class="section-desctiption">
+                    <section>
+                        上記を統合したプログラム全体です。<br>
+                        ・ブロックの回転<br>
+                        ・BackDisp(背景のブロック)とBlockLoca(操作しているブロック)を画面に表示<br>
+                        を行う処理も加えてます。長いですよ  (>o<)/<br>
+                        <button id="botan_open_4">▽</button><button id="botan_close_4">△</button>
+                        <section id="hyoji_4">
+                          <script src="https://gist.github.com/hiroaki-tanikawa/959a1004bcec6f5feeca8f3a42b3d1a2.js"></script>
+                        </section>
+                    </section>
+                </div>
+            </div>
+
+
+            <div class="section">
+                <h3 class="section-tytle">デモ映像</h3>                
+                <div class="section-desctiption">
+                <section>
+                    プレイするとこんな感じで動きます。
+                    <section> 
+                        <video autoplay loop muted>
+                            <source src="./image/tetoris_1player_r1.mp4" type="video/mp4">
+                        </video>
+                    </section>
+                </section>    
+                </div>
+            </div>
+
+
+            <br>
+            <br>
+            <a href="http://xd737151.html.xdomain.jp/programming_blog/mokuji/">目次に戻る</a> 
+        
+
+
+
+
+
+            <script>
+                 var hyoji_1 =document.getElementById("hyoji_1");
+                 var botan_open_1 =document.getElementById("botan_open_1");
+                 var botan_close_1 =document.getElementById("botan_close_1");
+
+                 botan_open_1.onclick = function()
+                 {
+                    hyoji_1.style.display='block'
+                    botan_open_1.style.display='none'  
+                    botan_close_1.style.display='block'  
+                 }
+                 botan_close_1.onclick = function()
+                 {
+                    hyoji_1.style.display='none'
+                    botan_open_1.style.display='block'  
+                    botan_close_1.style.display='none'   
+                 }                 
+
+
+                 var hyoji_2 =document.getElementById("hyoji_2");
+                 var botan_open_2 =document.getElementById("botan_open_2");
+                 var botan_close_2 =document.getElementById("botan_close_2");
+
+                 botan_open_2.onclick = function()
+                 {
+                    hyoji_2.style.display='block'
+                    botan_open_2.style.display='none'  
+                    botan_close_2.style.display='block'  
+                 }
+                 botan_close_2.onclick = function()
+                 {
+                    hyoji_2.style.display='none'
+                    botan_open_2.style.display='block'  
+                    botan_close_2.style.display='none'   
+                 }                 
+                 
+                 var hyoji_3 =document.getElementById("hyoji_3");
+                 var botan_open_3 =document.getElementById("botan_open_3");
+                 var botan_close_3 =document.getElementById("botan_close_3");
+
+                 botan_open_3.onclick = function()
+                 {
+                    hyoji_3.style.display='block'
+                    botan_open_3.style.display='none'  
+                    botan_close_3.style.display='block'  
+                 }
+                 botan_close_3.onclick = function()
+                 {
+                    hyoji_3.style.display='none'
+                    botan_open_3.style.display='block'  
+                    botan_close_3.style.display='none'   
+                 }                 
+                    
+                 var hyoji_4 =document.getElementById("hyoji_4");
+                 var botan_open_4 =document.getElementById("botan_open_4");
+                 var botan_close_4 =document.getElementById("botan_close_4");
+
+                 botan_open_4.onclick = function()
+                 {
+                    hyoji_4.style.display='block'
+                    botan_open_4.style.display='none'  
+                    botan_close_4.style.display='block'  
+                 }
+                 botan_close_4.onclick = function()
+                 {
+                    hyoji_4.style.display='none'
+                    botan_open_4.style.display='block'  
+                    botan_close_4.style.display='none'   
+                 }                 
+
+            </script>        
+    </section>
+</html>

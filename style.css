@@ -1,0 +1,195 @@
+@charset "utf-8";
+ /*タイトル*/ 
+
+ .title-image{
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    width: 100vw;
+    height: 15vw;
+    margin:0;
+    /*display: flex;
+    align-items: center;cennter中心にdiplayflex*/   
+}
+.title-headline{
+    z-index: 2;
+    position: absolute;
+    color: aliceblue;
+    font-size: 4vw;
+    font-weight: bold;
+    font-style:initial;
+    top: 2vw;
+    left: 50%;
+    transform: translate(-50%,-10%);
+}
+.title-about{
+    text-align: center;
+    font-size: 15px;
+    font-weight:normal;
+    margin:0 0 0 0
+}
+.title-desctiption{
+    text-align: center;
+    margin:10 0 0 0
+}
+
+
+/*内容*/
+.naiyo{
+    /*display: block;*/
+    background-color:#f8f9e7;
+    width: 100vw;    
+    margin:auto;
+    margin-top: 60px;
+    text-align: center;
+}
+.naiyo-headline{
+    text-align: center;
+    top:10px;
+
+}
+    /*section*/
+    .section{
+        width: 1000px;    
+        border: 1px solid;
+        border-color: rgb(0 73 255 / 33%);
+        background-color:#edfafa;
+        margin: auto;
+        margin-bottom: 10px;
+        padding: 15px;
+        border-radius: 16px;
+        text-align: left;
+    }
+
+    .section-tytle{
+        text-align: left;
+        margin: 0;
+    }
+    .section-desctiption{
+        text-align: left;
+        display: flex;
+    }
+
+    .section-image{
+        width: 600px;
+        height: 300px;
+    }
+
+    .small-tytle{
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    #hyoji_1{
+        display: none;
+        background-color:#0000000f;
+    }
+    #hyoji_2{
+        display: none;
+        background-color:#0000000f;
+    }
+    #hyoji_3{
+        display: none;
+        background-color:#0000000f;
+    }    
+    #hyoji_4{
+        display: none;
+    } 
+
+    
+    #botan_open_1{
+        font-weight: bold; 
+        color: #0211feab;
+        font-size: 20px;
+        border: none;
+        background-color:transparent;
+        margin: 0;
+        width: 60px;
+        text-align: center;
+        display:block
+    }
+
+    #botan_close_1{
+        font-weight: bold; 
+        color: #0211feab;
+        font-size: 20px;
+        border: none;
+        background-color:transparent;
+        margin: 0;
+        width: 60px;
+        text-align: center;
+        display:none
+    }
+
+    #botan_open_2{
+        font-weight: bold; 
+        color: #0211feab;
+        font-size: 20px;
+        border: none;
+        background-color:transparent;
+        margin: 0;
+        width: 60px;
+        text-align: center;
+        display:block
+    }
+
+    #botan_close_2{
+        font-weight: bold; 
+        color: #0211feab;
+        font-size: 20px;
+        border: none;
+        background-color:transparent;
+        margin: 0;
+        width: 60px;
+        text-align: center;
+        display:none
+    }
+
+    #botan_open_3{
+        font-weight: bold; 
+        color: #0211feab;
+        font-size: 20px;
+        border: none;
+        background-color:transparent;
+        margin: 0;
+        width: 60px;
+        text-align: center;
+        display:block
+    }
+
+    #botan_close_3{
+        font-weight: bold; 
+        color: #0211feab;
+        font-size: 20px;
+        border: none;
+        background-color:transparent;
+        margin: 0;
+        width: 60px;
+        text-align: center;
+        display:none
+    }
+
+    #botan_open_4{
+        font-weight: bold; 
+        color: #0211feab;
+        font-size: 20px;
+        border: none;
+        background-color:transparent;
+        margin: 0;
+        width: 60px;
+        text-align: center;
+        display:block
+    }
+
+    #botan_close_4{
+        font-weight: bold; 
+        color: #0211feab;
+        font-size: 20px;
+        border: none;
+        background-color:transparent;
+        margin: 0;
+        width: 60px;
+        text-align: center;
+        display:none
+    }
