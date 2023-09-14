@@ -1,195 +1,318 @@
 @charset "utf-8";
- /*タイトル*/ 
+*
+{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+}
 
- .title-image{
-    z-index: 1;
+
+.main
+{
+    width:100%;
     position: relative;
-    text-align: center;
-    width: 100vw;
-    height: 15vw;
-    margin:0;
-    /*display: flex;
-    align-items: center;cennter中心にdiplayflex*/   
-}
-.title-headline{
-    z-index: 2;
-    position: absolute;
-    color: aliceblue;
-    font-size: 4vw;
-    font-weight: bold;
-    font-style:initial;
-    top: 2vw;
-    left: 50%;
-    transform: translate(-50%,-10%);
-}
-.title-about{
-    text-align: center;
-    font-size: 15px;
-    font-weight:normal;
-    margin:0 0 0 0
-}
-.title-desctiption{
-    text-align: center;
-    margin:10 0 0 0
+    overflow: hidden;
+    background: linear-gradient(to right ,rgb(2, 2, 125),rgb(1, 8, 50));
 }
 
+.zukei1
+{
+    height: 20px;
+    width: 120px;
+    color: rgba(245, 92, 31, 0.881);
+    border: 2px solid;
+    position:absolute;
+    transform: rotate(45deg);
+    left:30px;
+    transition:10s;
+}
+.zukei1:hover
+{
+    transform: rotate(2000deg);
+    color: rgba(31, 245, 31, 0.881);
+    transition:15s;
+}
+
+.zukei2
+{
+    height: 20px;
+    width: 120px;
+    color: rgba(31, 213, 245, 0.947);
+    border: 2px solid;
+    position:absolute;
+    transform: rotate(124deg);
+    left: 100px;
+    transition:10s;
+}
+.zukei2:hover
+{
+    transform: rotate(2000deg);
+    color: rgba(255, 255, 255, 0.881);
+    transition:5s;
+}
+.zukei3
+{
+    height: 20px;
+    width: 150px;
+    color: rgb(245, 241, 31);
+    border: 2px solid;
+    position:absolute;
+    transform: rotate(330deg);
+    left: 200px;
+    transition:10s;
+}
+.zukei3:hover
+{
+    transform: rotate(2000deg);
+    color: rgb(255, 255, 255);
+    transition:5s;
+}
+
+
+.nav  /* 一番上の行 */
+{ 
+    width:90%;
+    position:sticky;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+}
+
+.logo
+{
+    display: block;
+    font-size: 25px;
+    margin: 0;
+    box-shadow :2px;
+    font-weight:700;
+    color: rgba(9, 238, 93, 0.915);
+    text-shadow: 0 2px 1px #9ac0c3a3; 
+    z-index: 10;
+}
+
+.nav-links
+{
+    position: absolute;   
+    right: 0;
+
+}
+.nav-links ul
+{
+    display: flex;
+}
+
+.nav-links ul li
+{
+    list-style: none;
+    margin:0 10px;
+}
+.nav-links ul li a
+{
+    display: inline-block;
+    color: rgba(0, 255, 255, 0.726);
+}
 
 /*内容*/
-.naiyo{
-    /*display: block;*/
-    background-color:#f8f9e7;
-    width: 100vw;    
+.naiyo
+{
+    background-color:#23ff016f;
+    width: 100%;    
     margin:auto;
     margin-top: 60px;
     text-align: center;
+    border-radius: 50%;
 }
-.naiyo-headline{
+.naiyo-headline
+{
+    color:aliceblue;
+    text-shadow: 0 2px 3px #d503ffa3; 
     text-align: center;
-    top:10px;
+    font-size: 25px;
+    
+}
+
+/* 内容の中の各セクション */
+.section{
+    width: 80%;    
+    background-color:#dedbe0c1;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 16px;
+    text-align: left;
+    box-shadow: 0 0 5px 1px rgb(231, 231, 231);
+} 
+
+.section-tytle
+{
+    font-size: 15px;
+    color: rgba(242, 242, 242, 0.915);
+    text-shadow: 0 2px 3px #100013a3; 
+}
+.small-tytle
+{
+    font-size: 13px;
+    font-weight:600;
+    color: rgba(242, 242, 242, 0.915);
+    text-shadow: 0 2px 3px #09000aa3; 
+}
+
+
+
+
+/* GitHub引用のプログラム */
+.script
+{
+    height: 350px;
+    overflow: scroll;
 
 }
-    /*section*/
-    .section{
-        width: 1000px;    
-        border: 1px solid;
-        border-color: rgb(0 73 255 / 33%);
-        background-color:#edfafa;
-        margin: auto;
-        margin-bottom: 10px;
-        padding: 15px;
-        border-radius: 16px;
-        text-align: left;
-    }
 
-    .section-tytle{
-        text-align: left;
-        margin: 0;
-    }
-    .section-desctiption{
-        text-align: left;
-        display: flex;
-    }
 
-    .section-image{
-        width: 600px;
-        height: 300px;
-    }
 
-    .small-tytle{
-        font-weight: bold;
-        font-size: 14px;
-        margin-bottom: 0;
-    }
 
-    #hyoji_1{
-        display: none;
-        background-color:#0000000f;
-    }
-    #hyoji_2{
-        display: none;
-        background-color:#0000000f;
-    }
-    #hyoji_3{
-        display: none;
-        background-color:#0000000f;
-    }    
-    #hyoji_4{
-        display: none;
-    } 
 
-    
-    #botan_open_1{
-        font-weight: bold; 
-        color: #0211feab;
-        font-size: 20px;
-        border: none;
-        background-color:transparent;
-        margin: 0;
-        width: 60px;
-        text-align: center;
-        display:block
-    }
 
-    #botan_close_1{
-        font-weight: bold; 
-        color: #0211feab;
-        font-size: 20px;
-        border: none;
-        background-color:transparent;
-        margin: 0;
-        width: 60px;
-        text-align: center;
-        display:none
-    }
+/* ボタン押したとき表示される */
+#hyoji_1{
+    display: none;
+    background-color:#0000003a;
+    box-shadow: 0 0 10px inset rgb(1, 7, 42);
+    padding: 10px;
+}
 
-    #botan_open_2{
-        font-weight: bold; 
-        color: #0211feab;
-        font-size: 20px;
-        border: none;
-        background-color:transparent;
-        margin: 0;
-        width: 60px;
-        text-align: center;
-        display:block
-    }
+#hyoji_2{
+    display: none;
+    background-color:#0000003a;
+    box-shadow: 0 0 10px inset rgb(1, 7, 42);
+    padding: 10px;
+}
+#hyoji_3{
+    display: none;
+    background-color:#0000003a;
+    box-shadow: 0 0 10px inset rgb(1, 7, 42);
+    padding: 10px;
+}    
+#hyoji_4{
+    display: none;
+    background-color:#0000003a;
+    box-shadow: 0 0 10px inset rgb(1, 7, 42);
+    padding: 10px;
+} 
 
-    #botan_close_2{
-        font-weight: bold; 
-        color: #0211feab;
-        font-size: 20px;
-        border: none;
-        background-color:transparent;
-        margin: 0;
-        width: 60px;
-        text-align: center;
-        display:none
-    }
 
-    #botan_open_3{
-        font-weight: bold; 
-        color: #0211feab;
-        font-size: 20px;
-        border: none;
-        background-color:transparent;
-        margin: 0;
-        width: 60px;
-        text-align: center;
-        display:block
-    }
 
-    #botan_close_3{
-        font-weight: bold; 
-        color: #0211feab;
-        font-size: 20px;
-        border: none;
-        background-color:transparent;
-        margin: 0;
-        width: 60px;
-        text-align: center;
-        display:none
-    }
+/* ボタン */
+#botan_open_1{
+    border: none;
+    background-color:transparent;
+    margin: 0;
+    width: 60px;
+    text-align: center;
+    display:block;
+}
 
-    #botan_open_4{
-        font-weight: bold; 
-        color: #0211feab;
-        font-size: 20px;
-        border: none;
-        background-color:transparent;
-        margin: 0;
-        width: 60px;
-        text-align: center;
-        display:block
-    }
+#botan_close_1{
+    border: none;
+    background-color:transparent;
+    margin: 0;
+    width: 60px;
+    text-align: center;
+    display:none
+}
 
-    #botan_close_4{
-        font-weight: bold; 
-        color: #0211feab;
-        font-size: 20px;
-        border: none;
-        background-color:transparent;
-        margin: 0;
-        width: 60px;
-        text-align: center;
-        display:none
-    }
+#botan_open_2{
+    border: none;
+    background-color:transparent;
+    margin: 0;
+    width: 60px;
+    text-align: center;
+    display:block
+}
+
+#botan_close_2{
+    border: none;
+    background-color:transparent;
+    margin: 0;
+    width: 60px;
+    text-align: center;
+    display:none
+}
+
+#botan_open_3{
+    border: none;
+    background-color:transparent;
+    margin: 0;
+    width: 60px;
+    text-align: center;
+    display:block
+}
+
+#botan_close_3{
+    border: none;
+    background-color:transparent;
+    margin: 0;
+    width: 60px;
+    text-align: center;
+    display:none
+}
+
+#botan_open_4{
+    border: none;
+    background-color:transparent;
+    margin: 0;
+    width: 60px;
+    text-align: center;
+    display:block
+}
+
+#botan_close_4{
+    border: none;
+    background-color:transparent;
+    margin: 0;
+    width: 60px;
+    text-align: center;
+    display:none
+}
+
+#botan_open_1:hover
+{
+    color: rgb(220, 20, 167);
+}
+
+#botan_close_1:hover
+{
+    color: rgb(220, 20, 167);
+}
+
+#botan_open_2:hover
+{
+    color: rgb(220, 20, 167);
+}
+
+#botan_close_2:hover
+{
+    color: rgb(220, 20, 167);
+}
+
+#botan_open_3:hover
+{
+    color: rgb(220, 20, 167);
+}
+
+#botan_close_3:hover
+{
+    color: rgb(220, 20, 167);
+}
+
+#botan_open_4:hover
+{
+    color: rgb(220, 20, 167);
+}
+
+#botan_close_4:hover
+{
+    color: rgb(220, 20, 167);
+}
