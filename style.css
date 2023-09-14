@@ -19,57 +19,65 @@
 
 .zukei1
 {
-    height: 20px;
+    height: 50px;
     width: 120px;
     color: rgba(245, 92, 31, 0.881);
     border: 2px solid;
     position:absolute;
-    transform: rotate(45deg);
+    transform: rotate(50deg);
     left:30px;
-    transition:10s;
+    animation: animate 5s linear infinite;
 }
-.zukei1:hover
-{
-    transform: rotate(2000deg);
-    color: rgba(31, 245, 31, 0.881);
-    transition:15s;
-}
-
 .zukei2
 {
-    height: 20px;
-    width: 120px;
+    height: 50px;
+    width: 50px;
     color: rgba(31, 213, 245, 0.947);
     border: 2px solid;
     position:absolute;
-    transform: rotate(124deg);
+    transform: rotate(0deg);
     left: 100px;
-    transition:10s;
-}
-.zukei2:hover
-{
-    transform: rotate(2000deg);
-    color: rgba(255, 255, 255, 0.881);
-    transition:5s;
+    animation: animate 7s linear infinite;
 }
 .zukei3
 {
-    height: 20px;
-    width: 150px;
+    height: 100px;
+    width: 120px;
     color: rgb(245, 241, 31);
     border: 2px solid;
     position:absolute;
     transform: rotate(330deg);
     left: 200px;
-    transition:10s;
-}
-.zukei3:hover
-{
-    transform: rotate(2000deg);
-    color: rgb(255, 255, 255);
-    transition:5s;
+    animation: animate 3s linear infinite;
 }
 
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+        border-radius: 0% 24% 50% 2%;
+    }
+    25%
+    {
+        transform: rotate(180deg);
+        border-radius: 19% 30% 140% 30%;
+        height: 100px;
+        width: 100px;
+    }
+    50%
+    {
+        transform: rotate(180deg);
+        border-radius: 40% 120% 10% 50%;
+        height: 20px;
+        width: 30px;
+    }
+    100%
+    {
+        transform: rotate(360deg);
+        border-radius: 0% 24% 50% 2%;
+    }
+}
 
 .nav  /* 一番上の行 */
 { 
@@ -177,31 +185,81 @@
 
 /* ボタン押したとき表示される */
 #hyoji_1{
-    display: none;
+    /* display: none; */
     background-color:#0000003a;
     box-shadow: 0 0 10px inset rgb(1, 7, 42);
+    padding: 0;
+    height:0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+#hyoji_1.on
+{
+    visibility:inherit;
+    opacity: 1;
+    transition: all 0.5s ease;
+    height: 100%;
     padding: 10px;
 }
 
 #hyoji_2{
-    display: none;
+    /* display: none; */
     background-color:#0000003a;
     box-shadow: 0 0 10px inset rgb(1, 7, 42);
+    padding: 0;
+    height:0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+#hyoji_2.on
+{
+    visibility:inherit;
+    opacity: 1;
+    transition: 0.5s;
+    height: 100%;
     padding: 10px;
 }
-#hyoji_3{
-    display: none;
-    background-color:#0000003a;
-    box-shadow: 0 0 10px inset rgb(1, 7, 42);
-    padding: 10px;
-}    
-#hyoji_4{
-    display: none;
-    background-color:#0000003a;
-    box-shadow: 0 0 10px inset rgb(1, 7, 42);
-    padding: 10px;
-} 
 
+#hyoji_3{
+    /* display: none; */
+    background-color:#0000003a;
+    box-shadow: 0 0 10px inset rgb(1, 7, 42);
+    padding: 0;
+    height:0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+#hyoji_3.on
+{
+    visibility:inherit;
+    opacity: 1;
+    transition: 0.5s;
+    height: 100%;
+    padding: 10px;
+}
+
+#hyoji_4{
+    /* display: none; */
+    background-color:#0000003a;
+    box-shadow: 0 0 10px inset rgb(1, 7, 42);
+    padding: 0;
+    height:0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+#hyoji_4.on
+{
+    visibility:inherit;
+    opacity: 1;
+    transition: 0.5s;
+    height: 100%;
+    padding: 10px;
+}
 
 
 /* ボタン */
@@ -211,7 +269,16 @@
     margin: 0;
     width: 60px;
     text-align: center;
-    display:block;
+    visibility: inherit;
+    opacity: 1;
+    transition: 0.5s;  
+}
+#botan_open_1.off
+{
+    visibility:hidden;
+    opacity: 0;
+    transition: 0.5s;
+    width: 0;
 }
 
 #botan_close_1{
@@ -220,8 +287,19 @@
     margin: 0;
     width: 60px;
     text-align: center;
-    display:none
+    visibility: inherit;
+    opacity: 0;
+    transition: 0.5s;
+    width: 0;
 }
+#botan_close_1.on
+{
+    visibility:visible;
+    opacity: 1;
+    transition: 0.5s;
+    width: 60px;
+}
+
 
 #botan_open_2{
     border: none;
@@ -229,17 +307,36 @@
     margin: 0;
     width: 60px;
     text-align: center;
-    display:block
+    visibility: inherit;
+    opacity: 1;
+    transition: 0.5s;  
 }
-
+#botan_open_2.off
+{
+    visibility:hidden;
+    opacity: 0;
+    transition: 0.5s;
+    width: 0;
+}
 #botan_close_2{
     border: none;
     background-color:transparent;
     margin: 0;
     width: 60px;
     text-align: center;
-    display:none
+    visibility: inherit;
+    opacity: 0;
+    transition: 0.5s;
+    width: 0;
 }
+#botan_close_2.on
+{
+    visibility:visible;
+    opacity: 1;
+    transition: 0.5s;
+    width: 60px;
+}
+
 
 #botan_open_3{
     border: none;
@@ -247,17 +344,37 @@
     margin: 0;
     width: 60px;
     text-align: center;
-    display:block
+    visibility: inherit;
+    opacity: 1;
+    transition: 0.5s;  
 }
-
+#botan_open_3.off
+{
+    visibility:hidden;
+    opacity: 0;
+    transition: 0.5s;
+    width: 0;
+}
 #botan_close_3{
     border: none;
     background-color:transparent;
     margin: 0;
     width: 60px;
     text-align: center;
-    display:none
+    visibility: inherit;
+    opacity: 0;
+    transition: 0.5s;
+    width: 0;
 }
+#botan_close_3.on
+{
+    visibility:visible;
+    opacity: 1;
+    transition: 0.5s;
+    width: 60px;
+}
+
+
 
 #botan_open_4{
     border: none;
@@ -265,17 +382,39 @@
     margin: 0;
     width: 60px;
     text-align: center;
-    display:block
+    visibility: inherit;
+    opacity: 1;
+    transition: 0.5s;  
 }
-
+#botan_open_4.off
+{
+    visibility:hidden;
+    opacity: 0;
+    transition: 0.5s;
+    width: 0;
+}
 #botan_close_4{
     border: none;
     background-color:transparent;
     margin: 0;
     width: 60px;
     text-align: center;
-    display:none
+    visibility: inherit;
+    opacity: 0;
+    transition: 0.5s;
+    width: 0;
 }
+#botan_close_4.on
+{
+    visibility:visible;
+    opacity: 1;
+    transition: 0.5s;
+    width: 60px;
+}
+
+
+
+
 
 #botan_open_1:hover
 {
