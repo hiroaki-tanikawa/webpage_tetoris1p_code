@@ -27,11 +27,6 @@
         </div> 
     </div>
 
-<!-- </div> -->
-<!-- </body> -->
-<!-- </html> -->
-    
-
 
     <div class="naiyo">   
         <h1 class="naiyo-headline">テトリス(Python)</h1>
@@ -56,7 +51,7 @@
                     とりあえず、下記３つの仕組みが出来たら大体テトリスは完成と言えるので、それぞれ作っていきます。
                     <p class="small-tytle">その１</p>
                     ・ブロックが下に落ち、地面に接したら地面化<br>
-                    ・地面化したら、次のブロックが呼び出される
+                    ・地面化したら、次のブロックが呼び出される<br>
                         <button id="botan_open_1">▽</button><button id="botan_close_1">△</button> 
                         <section id="hyoji_1">
                             まず2つの行列を用意します。<br>
@@ -78,7 +73,7 @@
                             ⇒つまり、BlockDisplayの要素1たちを何マス下にずらせばBackDisplayの要素1たちと重なるかを計算します。<br>
                             pro=ブロックを下にずらすマス数。<br>
                             proを増やしていき、地面と重なった時にブロックのy位置を(現状+pro-1)にて地面化します。<br>
-                            (背景BackDispに、地面化したブロックの箇所を1に書き換えます)
+                            (背景BackDispに、地面化したブロックの箇所を1に書き換えます)<br>
                             <div class="script">
                              <script src="https://gist.github.com/hiroaki-tanikawa/95f1cbdda988a696155ac5f854e6e53b.js"></script>
                             </div>
@@ -86,7 +81,7 @@
 
 
                     <p class="small-tytle">その2</p>
-                    ・地面や壁や地面化したブロックは通り抜けれないようにする
+                    ・地面や壁や地面化したブロックは通り抜けれないようにする<br>
                         <button id="botan_open_2">▽</button><button id="botan_close_2">△</button>
                         <section id="hyoji_2">
                             壁やブロックを通り抜けられない=突き抜ける方向のキーを押しても反応させない、と考えます。<br>
@@ -99,7 +94,7 @@
                     
                     
                     <p class="small-tytle">その3</p>
-                    ・水平に１ラインそろえばそのラインを消す
+                    ・水平に１ラインそろえばそのラインを消す<br>
                         <button id="botan_open_3">▽</button><button id="botan_close_3">△</button>
                         <section id="hyoji_3">
                             BackDisplayを上から下まで読んでいき、一ライン揃っていれば消す、を実行します。<br>
@@ -155,77 +150,81 @@
 
 
         <script>
-            var hyoji_1 =document.getElementById("hyoji_1");
-            var botan_open_1 =document.getElementById("botan_open_1");
-            var botan_close_1 =document.getElementById("botan_close_1");
+            const $hyoji_1 =document.getElementById("hyoji_1");
+            const $botan_open_1 =document.getElementById("botan_open_1");
+            const $botan_close_1 =document.getElementById("botan_close_1");         
 
             botan_open_1.onclick = function()
             {
-                hyoji_1.style.display='block'
-                botan_open_1.style.display='none'  
-                botan_close_1.style.display='block'  
+                $hyoji_1.classList.add('on');
+                $botan_open_1.classList.add('off');
+                $botan_close_1.classList.add('on');
             }
             botan_close_1.onclick = function()
             {
-                hyoji_1.style.display='none'
-                botan_open_1.style.display='block'  
-                botan_close_1.style.display='none'   
+                $hyoji_1.classList.remove('on');
+                $botan_open_1.classList.remove('off');
+                $botan_close_1.classList.remove('on');                 
             }                 
 
 
-            var hyoji_2 =document.getElementById("hyoji_2");
-            var botan_open_2 =document.getElementById("botan_open_2");
-            var botan_close_2 =document.getElementById("botan_close_2");
+            const $hyoji_2 =document.getElementById("hyoji_2");
+            const $botan_open_2 =document.getElementById("botan_open_2");
+            const $botan_close_2 =document.getElementById("botan_close_2");     
 
             botan_open_2.onclick = function()
             {
-                hyoji_2.style.display='block'
-                botan_open_2.style.display='none'  
-                botan_close_2.style.display='block'  
+                $hyoji_2.classList.add('on');
+                $botan_open_2.classList.add('off');
+                $botan_close_2.classList.add('on');
             }
             botan_close_2.onclick = function()
             {
-                hyoji_2.style.display='none'
-                botan_open_2.style.display='block'  
-                botan_close_2.style.display='none'   
+                $hyoji_2.classList.remove('on');
+                $botan_open_2.classList.remove('off');
+                $botan_close_2.classList.remove('on');        
             }                 
             
-            var hyoji_3 =document.getElementById("hyoji_3");
-            var botan_open_3 =document.getElementById("botan_open_3");
-            var botan_close_3 =document.getElementById("botan_close_3");
+            const $hyoji_3 =document.getElementById("hyoji_3");
+            const $botan_open_3 =document.getElementById("botan_open_3");
+            const $botan_close_3 =document.getElementById("botan_close_3");   
 
             botan_open_3.onclick = function()
             {
-                hyoji_3.style.display='block'
-                botan_open_3.style.display='none'  
-                botan_close_3.style.display='block'  
+                $hyoji_3.classList.add('on');
+                $botan_open_3.classList.add('off');
+                $botan_close_3.classList.add('on');
             }
             botan_close_3.onclick = function()
             {
-                hyoji_3.style.display='none'
-                botan_open_3.style.display='block'  
-                botan_close_3.style.display='none'   
+                $hyoji_3.classList.remove('on');
+                $botan_open_3.classList.remove('off');
+                $botan_close_3.classList.remove('on');    
             }                 
                 
-            var hyoji_4 =document.getElementById("hyoji_4");
-            var botan_open_4 =document.getElementById("botan_open_4");
-            var botan_close_4 =document.getElementById("botan_close_4");
+            const $hyoji_4 =document.getElementById("hyoji_4");
+            const $botan_open_4 =document.getElementById("botan_open_4");
+            const $botan_close_4 =document.getElementById("botan_close_4");   
 
             botan_open_4.onclick = function()
             {
-                hyoji_4.style.display='block'
-                botan_open_4.style.display='none'  
-                botan_close_4.style.display='block'  
+                $hyoji_4.classList.add('on');
+                $botan_open_4.classList.add('off');
+                $botan_close_4.classList.add('on');
             }
             botan_close_4.onclick = function()
             {
-                hyoji_4.style.display='none'
-                botan_open_4.style.display='block'  
-                botan_close_4.style.display='none'   
+                $hyoji_4.classList.remove('on');
+                $botan_open_4.classList.remove('off');
+                $botan_close_4.classList.remove('on');  
             }                 
 
         </script>        
     </section>
+
+</div>
+</body>
+</html>
 
 </div>
 </body>
