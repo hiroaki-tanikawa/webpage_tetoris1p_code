@@ -3,5 +3,4 @@
 現在、スマートフォン対応、アニメーション追加を実施中です。
   
 
-[http://xd737151.html.xdomain.jp/programming_blog/mokuji/  ](http://xd737151.html.xdomain.jp/programming_blog/tetoris_1player/)  
-![1player_demo_r1](https://github.com/hiroaki-tanikawa/webpage_tetoris1p_code/assets/143544995/876137ac-807c-483e-9715-1bb03f54818c)
+![1player_demo_r3](https://github.com/hiroaki-tanikawa/webpage_tetoris1p_code/assets/143544995/44a3c2cb-0cfb-4abb-9cf5-9849225e1e52)
